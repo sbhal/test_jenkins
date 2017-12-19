@@ -10,7 +10,7 @@ pipeline {
       steps {
         sh '''git clone https://github.com/sbhal/test_jenkins.git
         echo "test1" >> README.md
-        
+        sleep 2
         if [[ `git status --porcelain` ]]; then
         echo Something to commit
         git diff --no-pager
