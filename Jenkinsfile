@@ -8,8 +8,12 @@ pipeline {
     }
     stage('stage2') {
       steps {
-        sh '''if [[ `git status --porcelain` ]]; then
+        sh '''git clone https://github.com/sbhal/test_jenkins.git
+        echo "test1" >> README.md
+        
+        if [[ `git status --porcelain` ]]; then
         echo Something to commit
+        git diff --no-pager
 else
         echo Nothing to commit
 fi
