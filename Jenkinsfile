@@ -8,7 +8,10 @@ pipeline {
     }
     stage('stage2') {
       steps {
-        sh '''git clone https://github.com/sbhal/test_jenkins.git
+        sh '''rm -rf test_jenkins
+pwd
+git clone https://github.com/sbhal/test_jenkins.git
+pwd
         echo "test1" >> README.md
         sleep 2
         if [[ `git status --porcelain` ]]; then
